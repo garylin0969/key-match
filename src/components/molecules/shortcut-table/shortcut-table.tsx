@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { SHORTCUT_CATEGORIES, type Shortcut } from '@/constants/shortcuts';
+import { SHORTCUT_CATEGORIES } from '@/constants/shortcuts';
 
 interface ShortcutTableProps {
     shortcuts: Array<{
@@ -14,7 +14,7 @@ interface ShortcutTableProps {
     title: string;
 }
 
-export function ShortcutTable({ shortcuts, title }: ShortcutTableProps) {
+const ShortcutTable = ({ shortcuts, title }: ShortcutTableProps) => {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const filteredShortcuts = useMemo(() => {
@@ -88,4 +88,6 @@ export function ShortcutTable({ shortcuts, title }: ShortcutTableProps) {
             </div>
         </div>
     );
-}
+};
+
+export default ShortcutTable;

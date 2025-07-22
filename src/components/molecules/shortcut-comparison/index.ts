@@ -1,1 +1,1 @@
-export { ShortcutComparison } from './shortcut-comparison';
+export { default } from './shortcut-comparison';

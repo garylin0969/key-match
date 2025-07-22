@@ -1,1 +1,1 @@
-export { ShortcutTable } from './shortcut-table';
+export { default } from './shortcut-table';

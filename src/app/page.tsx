@@ -1,5 +1,5 @@
-import { ShortcutComparison } from '@/components/molecules/shortcut-comparison';
-import { ShortcutTable } from '@/components/molecules/shortcut-table';
+import ShortcutComparison from '@/components/molecules/shortcut-comparison';
+import ShortcutTable from '@/components/molecules/shortcut-table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { WINDOWS_SHORTCUTS, MAC_SHORTCUTS } from '@/constants/shortcuts';
 

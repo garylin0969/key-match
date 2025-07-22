@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { SHORTCUTS, SHORTCUT_CATEGORIES } from '@/constants/shortcuts';
 
-export function ShortcutComparison() {
+const ShortcutComparison = () => {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const filteredShortcuts = useMemo(() => {
@@ -85,4 +85,6 @@ export function ShortcutComparison() {
             </div>
         </div>
     );
-}
+};
+
+export default ShortcutComparison;
