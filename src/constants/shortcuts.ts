@@ -10,7 +10,11 @@ export interface MacShortcut {
     key: string;
 }
 
-export const SYSTEM = ['Windows 11', 'Windows 10', 'MacOS'];
+export enum SYSTEM_ENUM {
+    WINDOWS11 = 'Windows 11',
+    WINDOWS10 = 'Windows 10',
+    MACOS = 'MacOS',
+}
 
 export const WINDOWS11_SHORTCUT_CATEGORIES = [
     '系統操作',
