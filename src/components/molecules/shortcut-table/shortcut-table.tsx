@@ -3,11 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import {
-    WINDOWS11_SHORTCUT_CATEGORIES,
-    WINDOWS10_SHORTCUT_CATEGORIES,
-    MAC_SHORTCUT_CATEGORIES,
-} from '@/constants/shortcuts';
+import { WINDOWS_SHORTCUT_CATEGORIES, MAC_SHORTCUT_CATEGORIES, SYSTEM_ENUM } from '@/constants/shortcuts';
 
 interface ShortcutTableProps {
     system: string;
@@ -21,9 +17,8 @@ interface ShortcutTableProps {
 
 const ShortcutTable = ({ system, shortcuts, title }: ShortcutTableProps) => {
     const categories = useMemo(() => {
-        if (system === 'Windows 11') return WINDOWS11_SHORTCUT_CATEGORIES;
-        if (system === 'Windows 10') return WINDOWS10_SHORTCUT_CATEGORIES;
-        if (system === 'MacOS') return MAC_SHORTCUT_CATEGORIES;
+        if (system === SYSTEM_ENUM.WINDOWS) return WINDOWS_SHORTCUT_CATEGORIES;
+        if (system === SYSTEM_ENUM.MACOS) return MAC_SHORTCUT_CATEGORIES;
         return [];
     }, [system]);
 
@@ -58,17 +53,16 @@ const ShortcutTable = ({ system, shortcuts, title }: ShortcutTableProps) => {
                     >
                         全部
                     </Button>
-                    {system === 'Windows 11' &&
-                        categories.map((category) => (
-                            <Button
-                                key={category}
-                                variant={selectedCategory === category ? 'default' : 'outline'}
-                                onClick={() => setSelectedCategory(category)}
-                                size="sm"
-                            >
-                                {category}
-                            </Button>
-                        ))}
+                    {categories?.map((category) => (
+                        <Button
+                            key={category}
+                            variant={selectedCategory === category ? 'default' : 'outline'}
+                            onClick={() => setSelectedCategory(category)}
+                            size="sm"
+                        >
+                            {category}
+                        </Button>
+                    ))}
                 </div>
             </div>
 

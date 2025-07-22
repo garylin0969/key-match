@@ -11,27 +11,11 @@ export interface MacShortcut {
 }
 
 export enum SYSTEM_ENUM {
-    WINDOWS11 = 'Windows 11',
-    WINDOWS10 = 'Windows 10',
-    MACOS = 'MacOS',
+    WINDOWS = 'Windows',
+    MACOS = 'macOS',
 }
 
-export const WINDOWS11_SHORTCUT_CATEGORIES = [
-    '系統操作',
-    '文字編輯',
-    '檔案管理',
-    '視窗管理',
-    '瀏覽器',
-    '截圖',
-] as const;
-export const WINDOWS10_SHORTCUT_CATEGORIES = [
-    '系統操作',
-    '文字編輯',
-    '檔案管理',
-    '視窗管理',
-    '瀏覽器',
-    '截圖',
-] as const;
+export const WINDOWS_SHORTCUT_CATEGORIES = ['系統操作', '文字編輯', '檔案管理', '視窗管理', '瀏覽器', '截圖'] as const;
 export const MAC_SHORTCUT_CATEGORIES = ['系統操作', '文字編輯', '檔案管理', '視窗管理', '瀏覽器', '截圖'] as const;
 
 export const WINDOWS_SHORTCUTS: WindowsShortcut[] = [

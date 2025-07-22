@@ -10,8 +10,8 @@ export default function Home() {
                 <p className="text-muted-foreground text-lg">Windows 與 Mac 系統的常用快捷鍵說明</p>
             </div>
 
-            <Tabs defaultValue={SYSTEM_ENUM.WINDOWS11} className="w-full">
-                <TabsList className="grid w-full grid-cols-3">
+            <Tabs defaultValue={SYSTEM_ENUM.WINDOWS} className="w-full">
+                <TabsList className="grid w-full grid-cols-2">
                     {Object.values(SYSTEM_ENUM).map((system) => (
                         <TabsTrigger key={system} value={system}>
                             {system}
@@ -19,20 +19,8 @@ export default function Home() {
                     ))}
                 </TabsList>
 
-                <TabsContent value={SYSTEM_ENUM.WINDOWS11} className="mt-6">
-                    <ShortcutTable
-                        system={SYSTEM_ENUM.WINDOWS11}
-                        shortcuts={WINDOWS_SHORTCUTS}
-                        title="Windows 11 快捷鍵"
-                    />
-                </TabsContent>
-
-                <TabsContent value={SYSTEM_ENUM.WINDOWS10} className="mt-6">
-                    <ShortcutTable
-                        system={SYSTEM_ENUM.WINDOWS10}
-                        shortcuts={WINDOWS_SHORTCUTS}
-                        title="Windows 10 快捷鍵"
-                    />
+                <TabsContent value={SYSTEM_ENUM.WINDOWS} className="mt-6">
+                    <ShortcutTable system={SYSTEM_ENUM.WINDOWS} shortcuts={WINDOWS_SHORTCUTS} title="Windows 快捷鍵" />
                 </TabsContent>
 
                 <TabsContent value={SYSTEM_ENUM.MACOS} className="mt-6">
