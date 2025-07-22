@@ -5,7 +5,7 @@ import { WINDOWS_SHORTCUTS, MAC_SHORTCUTS } from '@/constants/shortcuts';
 
 export default function Home() {
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="py-8">
             <div className="mb-8 text-center">
                 <h1 className="mb-4 text-4xl font-bold">鍵盤快捷鍵對照表</h1>
                 <p className="text-muted-foreground text-lg">Windows 與 Mac 系統的常用快捷鍵對照與說明</p>
