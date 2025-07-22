@@ -1,436 +1,744 @@
-export interface Shortcut {
+export interface WindowsShortcut {
     category: string;
     description: string;
-    windows: string;
-    mac: string;
+    key: string;
 }
 
-export const SHORTCUT_CATEGORIES = ['系統操作', '文字編輯', '檔案管理', '視窗管理', '瀏覽器', '截圖'] as const;
+export interface MacShortcut {
+    category: string;
+    description: string;
+    key: string;
+}
 
-export const SHORTCUTS: Shortcut[] = [
+export const SYSTEM = ['Windows 11', 'Windows 10', 'MacOS'];
+
+export const WINDOWS11_SHORTCUT_CATEGORIES = [
+    '系統操作',
+    '文字編輯',
+    '檔案管理',
+    '視窗管理',
+    '瀏覽器',
+    '截圖',
+] as const;
+export const WINDOWS10_SHORTCUT_CATEGORIES = [
+    '系統操作',
+    '文字編輯',
+    '檔案管理',
+    '視窗管理',
+    '瀏覽器',
+    '截圖',
+] as const;
+export const MAC_SHORTCUT_CATEGORIES = ['系統操作', '文字編輯', '檔案管理', '視窗管理', '瀏覽器', '截圖'] as const;
+
+export const WINDOWS_SHORTCUTS: WindowsShortcut[] = [
     // 系統操作
     {
         category: '系統操作',
         description: '複製',
-        windows: 'Ctrl + C',
-        mac: 'Cmd + C',
+        key: 'Ctrl + C',
     },
     {
         category: '系統操作',
         description: '貼上',
-        windows: 'Ctrl + V',
-        mac: 'Cmd + V',
+        key: 'Ctrl + V',
     },
     {
         category: '系統操作',
         description: '剪下',
-        windows: 'Ctrl + X',
-        mac: 'Cmd + X',
+        key: 'Ctrl + X',
     },
     {
         category: '系統操作',
         description: '復原',
-        windows: 'Ctrl + Z',
-        mac: 'Cmd + Z',
+        key: 'Ctrl + Z',
     },
     {
         category: '系統操作',
         description: '重做',
-        windows: 'Ctrl + Y',
-        mac: 'Cmd + Shift + Z',
+        key: 'Ctrl + Y',
     },
     {
         category: '系統操作',
         description: '全選',
-        windows: 'Ctrl + A',
-        mac: 'Cmd + A',
+        key: 'Ctrl + A',
     },
     {
         category: '系統操作',
         description: '搜尋',
-        windows: 'Ctrl + F',
-        mac: 'Cmd + F',
+        key: 'Ctrl + F',
     },
     {
         category: '系統操作',
         description: '列印',
-        windows: 'Ctrl + P',
-        mac: 'Cmd + P',
+        key: 'Ctrl + P',
     },
     {
         category: '系統操作',
         description: '儲存',
-        windows: 'Ctrl + S',
-        mac: 'Cmd + S',
+        key: 'Ctrl + S',
     },
     {
         category: '系統操作',
         description: '另存新檔',
-        windows: 'Ctrl + Shift + S',
-        mac: 'Cmd + Shift + S',
+        key: 'Ctrl + Shift + S',
     },
     {
         category: '系統操作',
         description: '開啟',
-        windows: 'Ctrl + O',
-        mac: 'Cmd + O',
+        key: 'Ctrl + O',
     },
     {
         category: '系統操作',
         description: '新建',
-        windows: 'Ctrl + N',
-        mac: 'Cmd + N',
+        key: 'Ctrl + N',
     },
     {
         category: '系統操作',
         description: '關閉',
-        windows: 'Ctrl + W',
-        mac: 'Cmd + W',
+        key: 'Ctrl + W',
     },
     {
         category: '系統操作',
         description: '強制退出應用程式',
-        windows: 'Ctrl + Shift + Esc',
-        mac: 'Cmd + Option + Esc',
+        key: 'Ctrl + Shift + Esc',
     },
     {
         category: '系統操作',
         description: '系統搜尋',
-        windows: 'Win + S',
-        mac: 'Cmd + Space',
+        key: 'Win + S',
     },
     {
         category: '系統操作',
         description: '鎖定電腦',
-        windows: 'Win + L',
-        mac: 'Cmd + Ctrl + Q',
+        key: 'Win + L',
+    },
+    {
+        category: '系統操作',
+        description: '工作管理員',
+        key: 'Ctrl + Alt + Delete',
     },
 
     // 文字編輯
     {
         category: '文字編輯',
         description: '粗體',
-        windows: 'Ctrl + B',
-        mac: 'Cmd + B',
+        key: 'Ctrl + B',
     },
     {
         category: '文字編輯',
         description: '斜體',
-        windows: 'Ctrl + I',
-        mac: 'Cmd + I',
+        key: 'Ctrl + I',
     },
     {
         category: '文字編輯',
         description: '底線',
-        windows: 'Ctrl + U',
-        mac: 'Cmd + U',
+        key: 'Ctrl + U',
     },
     {
         category: '文字編輯',
         description: '移動到行首',
-        windows: 'Home',
-        mac: 'Cmd + Left',
+        key: 'Home',
     },
     {
         category: '文字編輯',
         description: '移動到行尾',
-        windows: 'End',
-        mac: 'Cmd + Right',
+        key: 'End',
     },
     {
         category: '文字編輯',
         description: '移動到文件開頭',
-        windows: 'Ctrl + Home',
-        mac: 'Cmd + Up',
+        key: 'Ctrl + Home',
     },
     {
         category: '文字編輯',
         description: '移動到文件結尾',
-        windows: 'Ctrl + End',
-        mac: 'Cmd + Down',
+        key: 'Ctrl + End',
     },
     {
         category: '文字編輯',
         description: '選取到行首',
-        windows: 'Shift + Home',
-        mac: 'Cmd + Shift + Left',
+        key: 'Shift + Home',
     },
     {
         category: '文字編輯',
         description: '選取到行尾',
-        windows: 'Shift + End',
-        mac: 'Cmd + Shift + Right',
+        key: 'Shift + End',
     },
     {
         category: '文字編輯',
         description: '按字移動（左）',
-        windows: 'Ctrl + Left',
-        mac: 'Option + Left',
+        key: 'Ctrl + Left',
     },
     {
         category: '文字編輯',
         description: '按字移動（右）',
-        windows: 'Ctrl + Right',
-        mac: 'Option + Right',
+        key: 'Ctrl + Right',
     },
     {
         category: '文字編輯',
         description: '刪除前一個字',
-        windows: 'Ctrl + Backspace',
-        mac: 'Option + Delete',
+        key: 'Ctrl + Backspace',
     },
     {
         category: '文字編輯',
         description: '刪除後一個字',
-        windows: 'Ctrl + Delete',
-        mac: 'Option + Fn + Delete',
+        key: 'Ctrl + Delete',
     },
 
     // 檔案管理
     {
         category: '檔案管理',
         description: '開啟檔案總管',
-        windows: 'Win + E',
-        mac: 'Cmd + Space → Finder',
+        key: 'Win + E',
     },
     {
         category: '檔案管理',
         description: '新增資料夾',
-        windows: 'Ctrl + Shift + N',
-        mac: 'Cmd + Shift + N',
+        key: 'Ctrl + Shift + N',
     },
     {
         category: '檔案管理',
         description: '重新命名',
-        windows: 'F2',
-        mac: 'Enter',
+        key: 'F2',
     },
     {
         category: '檔案管理',
         description: '刪除到資源回收筒',
-        windows: 'Delete',
-        mac: 'Cmd + Delete',
+        key: 'Delete',
     },
     {
         category: '檔案管理',
         description: '永久刪除',
-        windows: 'Shift + Delete',
-        mac: 'Cmd + Option + Delete',
+        key: 'Shift + Delete',
     },
     {
         category: '檔案管理',
         description: '重新整理',
-        windows: 'F5',
-        mac: 'Cmd + R',
+        key: 'F5',
     },
     {
         category: '檔案管理',
         description: '返回上一層',
-        windows: 'Alt + Up',
-        mac: 'Cmd + Up',
+        key: 'Alt + Up',
     },
     {
         category: '檔案管理',
         description: '檔案屬性',
-        windows: 'Alt + Enter',
-        mac: 'Cmd + I',
+        key: 'Alt + Enter',
     },
     {
         category: '檔案管理',
         description: '選取多個檔案',
-        windows: 'Ctrl + Click',
-        mac: 'Cmd + Click',
+        key: 'Ctrl + Click',
     },
     {
         category: '檔案管理',
         description: '顯示隱藏檔案',
-        windows: 'Ctrl + H',
-        mac: 'Cmd + Shift + .',
+        key: 'Ctrl + H',
     },
 
     // 視窗管理
     {
         category: '視窗管理',
         description: '最小化視窗',
-        windows: 'Win + M',
-        mac: 'Cmd + M',
+        key: 'Win + M',
     },
     {
         category: '視窗管理',
         description: '最大化視窗',
-        windows: 'Win + Up',
-        mac: 'Ctrl + Cmd + F',
+        key: 'Win + Up',
     },
     {
         category: '視窗管理',
         description: '還原視窗',
-        windows: 'Win + Down',
-        mac: 'Ctrl + Cmd + F',
+        key: 'Win + Down',
     },
     {
         category: '視窗管理',
         description: '視窗左半邊',
-        windows: 'Win + Left',
-        mac: '需第三方軟體',
+        key: 'Win + Left',
     },
     {
         category: '視窗管理',
         description: '視窗右半邊',
-        windows: 'Win + Right',
-        mac: '需第三方軟體',
+        key: 'Win + Right',
     },
     {
         category: '視窗管理',
         description: '切換應用程式',
-        windows: 'Alt + Tab',
-        mac: 'Cmd + Tab',
+        key: 'Alt + Tab',
     },
     {
         category: '視窗管理',
         description: '切換同應用程式視窗',
-        windows: 'Alt + `',
-        mac: 'Cmd + `',
+        key: 'Alt + `',
     },
     {
         category: '視窗管理',
         description: '關閉視窗',
-        windows: 'Alt + F4',
-        mac: 'Cmd + Q',
+        key: 'Alt + F4',
     },
     {
         category: '視窗管理',
         description: '顯示桌面',
-        windows: 'Win + D',
-        mac: 'F11',
+        key: 'Win + D',
     },
     {
         category: '視窗管理',
         description: '任務檢視',
-        windows: 'Win + Tab',
-        mac: 'F3 (Mission Control)',
+        key: 'Win + Tab',
+    },
+    {
+        category: '視窗管理',
+        description: '虛擬桌面切換',
+        key: 'Win + Ctrl + Left/Right',
     },
 
     // 瀏覽器
     {
         category: '瀏覽器',
         description: '新分頁',
-        windows: 'Ctrl + T',
-        mac: 'Cmd + T',
+        key: 'Ctrl + T',
     },
     {
         category: '瀏覽器',
         description: '關閉分頁',
-        windows: 'Ctrl + W',
-        mac: 'Cmd + W',
+        key: 'Ctrl + W',
     },
     {
         category: '瀏覽器',
         description: '重新開啟分頁',
-        windows: 'Ctrl + Shift + T',
-        mac: 'Cmd + Shift + T',
+        key: 'Ctrl + Shift + T',
     },
     {
         category: '瀏覽器',
         description: '切換分頁（右）',
-        windows: 'Ctrl + Tab',
-        mac: 'Cmd + Option + Right',
+        key: 'Ctrl + Tab',
     },
     {
         category: '瀏覽器',
         description: '切換分頁（左）',
-        windows: 'Ctrl + Shift + Tab',
-        mac: 'Cmd + Option + Left',
+        key: 'Ctrl + Shift + Tab',
     },
     {
         category: '瀏覽器',
         description: '重新載入',
-        windows: 'Ctrl + R',
-        mac: 'Cmd + R',
+        key: 'Ctrl + R',
     },
     {
         category: '瀏覽器',
         description: '強制重新載入',
-        windows: 'Ctrl + F5',
-        mac: 'Cmd + Shift + R',
+        key: 'Ctrl + F5',
     },
     {
         category: '瀏覽器',
         description: '回上一頁',
-        windows: 'Alt + Left',
-        mac: 'Cmd + Left',
+        key: 'Alt + Left',
     },
     {
         category: '瀏覽器',
         description: '前往下一頁',
-        windows: 'Alt + Right',
-        mac: 'Cmd + Right',
+        key: 'Alt + Right',
     },
     {
         category: '瀏覽器',
         description: '網址列',
-        windows: 'Ctrl + L',
-        mac: 'Cmd + L',
+        key: 'Ctrl + L',
     },
     {
         category: '瀏覽器',
         description: '書籤欄',
-        windows: 'Ctrl + Shift + B',
-        mac: 'Cmd + Shift + B',
+        key: 'Ctrl + Shift + B',
     },
     {
         category: '瀏覽器',
         description: '無痕模式',
-        windows: 'Ctrl + Shift + N',
-        mac: 'Cmd + Shift + N',
+        key: 'Ctrl + Shift + N',
+    },
+    {
+        category: '瀏覽器',
+        description: '開發者工具',
+        key: 'F12',
     },
 
     // 截圖
     {
         category: '截圖',
         description: '全螢幕截圖',
-        windows: 'Win + PrtScn',
-        mac: 'Cmd + Shift + 3',
+        key: 'Win + PrtScn',
     },
     {
         category: '截圖',
         description: '區域截圖',
-        windows: 'Win + Shift + S',
-        mac: 'Cmd + Shift + 4',
+        key: 'Win + Shift + S',
     },
     {
         category: '截圖',
         description: '視窗截圖',
-        windows: 'Alt + PrtScn',
-        mac: 'Cmd + Shift + 4 → Space',
+        key: 'Alt + PrtScn',
     },
     {
         category: '截圖',
-        description: '延遲截圖',
-        windows: '使用剪取工具',
-        mac: 'Cmd + Shift + 5',
-    },
-    {
-        category: '截圖',
-        description: '截圖並編輯',
-        windows: 'Win + Shift + S',
-        mac: 'Cmd + Shift + 5',
+        description: '截圖工具',
+        key: 'Win + Shift + S',
     },
     {
         category: '截圖',
         description: '複製到剪貼簿',
-        windows: 'PrtScn',
-        mac: 'Cmd + Ctrl + Shift + 3',
+        key: 'PrtScn',
     },
 ];
 
-export const WINDOWS_SHORTCUTS = SHORTCUTS.map((shortcut) => ({
-    category: shortcut.category,
-    description: shortcut.description,
-    key: shortcut.windows,
-}));
+export const MAC_SHORTCUTS: MacShortcut[] = [
+    // 系統操作
+    {
+        category: '系統操作',
+        description: '複製',
+        key: 'Cmd + C',
+    },
+    {
+        category: '系統操作',
+        description: '貼上',
+        key: 'Cmd + V',
+    },
+    {
+        category: '系統操作',
+        description: '剪下',
+        key: 'Cmd + X',
+    },
+    {
+        category: '系統操作',
+        description: '復原',
+        key: 'Cmd + Z',
+    },
+    {
+        category: '系統操作',
+        description: '重做',
+        key: 'Cmd + Shift + Z',
+    },
+    {
+        category: '系統操作',
+        description: '全選',
+        key: 'Cmd + A',
+    },
+    {
+        category: '系統操作',
+        description: '搜尋',
+        key: 'Cmd + F',
+    },
+    {
+        category: '系統操作',
+        description: '列印',
+        key: 'Cmd + P',
+    },
+    {
+        category: '系統操作',
+        description: '儲存',
+        key: 'Cmd + S',
+    },
+    {
+        category: '系統操作',
+        description: '另存新檔',
+        key: 'Cmd + Shift + S',
+    },
+    {
+        category: '系統操作',
+        description: '開啟',
+        key: 'Cmd + O',
+    },
+    {
+        category: '系統操作',
+        description: '新建',
+        key: 'Cmd + N',
+    },
+    {
+        category: '系統操作',
+        description: '關閉',
+        key: 'Cmd + W',
+    },
+    {
+        category: '系統操作',
+        description: '強制退出應用程式',
+        key: 'Cmd + Option + Esc',
+    },
+    {
+        category: '系統操作',
+        description: 'Spotlight 搜尋',
+        key: 'Cmd + Space',
+    },
+    {
+        category: '系統操作',
+        description: '鎖定螢幕',
+        key: 'Cmd + Ctrl + Q',
+    },
+    {
+        category: '系統操作',
+        description: '活動監視器',
+        key: 'Cmd + Space → Activity Monitor',
+    },
 
-export const MAC_SHORTCUTS = SHORTCUTS.map((shortcut) => ({
-    category: shortcut.category,
-    description: shortcut.description,
-    key: shortcut.mac,
-}));
+    // 文字編輯
+    {
+        category: '文字編輯',
+        description: '粗體',
+        key: 'Cmd + B',
+    },
+    {
+        category: '文字編輯',
+        description: '斜體',
+        key: 'Cmd + I',
+    },
+    {
+        category: '文字編輯',
+        description: '底線',
+        key: 'Cmd + U',
+    },
+    {
+        category: '文字編輯',
+        description: '移動到行首',
+        key: 'Cmd + Left',
+    },
+    {
+        category: '文字編輯',
+        description: '移動到行尾',
+        key: 'Cmd + Right',
+    },
+    {
+        category: '文字編輯',
+        description: '移動到文件開頭',
+        key: 'Cmd + Up',
+    },
+    {
+        category: '文字編輯',
+        description: '移動到文件結尾',
+        key: 'Cmd + Down',
+    },
+    {
+        category: '文字編輯',
+        description: '選取到行首',
+        key: 'Cmd + Shift + Left',
+    },
+    {
+        category: '文字編輯',
+        description: '選取到行尾',
+        key: 'Cmd + Shift + Right',
+    },
+    {
+        category: '文字編輯',
+        description: '按字移動（左）',
+        key: 'Option + Left',
+    },
+    {
+        category: '文字編輯',
+        description: '按字移動（右）',
+        key: 'Option + Right',
+    },
+    {
+        category: '文字編輯',
+        description: '刪除前一個字',
+        key: 'Option + Delete',
+    },
+    {
+        category: '文字編輯',
+        description: '刪除後一個字',
+        key: 'Option + Fn + Delete',
+    },
+
+    // 檔案管理
+    {
+        category: '檔案管理',
+        description: '開啟 Finder',
+        key: 'Cmd + Space → Finder',
+    },
+    {
+        category: '檔案管理',
+        description: '新增資料夾',
+        key: 'Cmd + Shift + N',
+    },
+    {
+        category: '檔案管理',
+        description: '重新命名',
+        key: 'Enter',
+    },
+    {
+        category: '檔案管理',
+        description: '移到垃圾桶',
+        key: 'Cmd + Delete',
+    },
+    {
+        category: '檔案管理',
+        description: '清空垃圾桶',
+        key: 'Cmd + Shift + Delete',
+    },
+    {
+        category: '檔案管理',
+        description: '重新整理',
+        key: 'Cmd + R',
+    },
+    {
+        category: '檔案管理',
+        description: '返回上一層',
+        key: 'Cmd + Up',
+    },
+    {
+        category: '檔案管理',
+        description: '檔案資訊',
+        key: 'Cmd + I',
+    },
+    {
+        category: '檔案管理',
+        description: '選取多個檔案',
+        key: 'Cmd + Click',
+    },
+    {
+        category: '檔案管理',
+        description: '顯示隱藏檔案',
+        key: 'Cmd + Shift + .',
+    },
+    {
+        category: '檔案管理',
+        description: '快速預覽',
+        key: 'Space',
+    },
+
+    // 視窗管理
+    {
+        category: '視窗管理',
+        description: '最小化視窗',
+        key: 'Cmd + M',
+    },
+    {
+        category: '視窗管理',
+        description: '全螢幕模式',
+        key: 'Ctrl + Cmd + F',
+    },
+    {
+        category: '視窗管理',
+        description: '切換應用程式',
+        key: 'Cmd + Tab',
+    },
+    {
+        category: '視窗管理',
+        description: '切換同應用程式視窗',
+        key: 'Cmd + `',
+    },
+    {
+        category: '視窗管理',
+        description: '退出應用程式',
+        key: 'Cmd + Q',
+    },
+    {
+        category: '視窗管理',
+        description: 'Mission Control',
+        key: 'F3',
+    },
+    {
+        category: '視窗管理',
+        description: '顯示桌面',
+        key: 'F11',
+    },
+    {
+        category: '視窗管理',
+        description: 'Launchpad',
+        key: 'F4',
+    },
+
+    // 瀏覽器
+    {
+        category: '瀏覽器',
+        description: '新分頁',
+        key: 'Cmd + T',
+    },
+    {
+        category: '瀏覽器',
+        description: '關閉分頁',
+        key: 'Cmd + W',
+    },
+    {
+        category: '瀏覽器',
+        description: '重新開啟分頁',
+        key: 'Cmd + Shift + T',
+    },
+    {
+        category: '瀏覽器',
+        description: '切換分頁（右）',
+        key: 'Cmd + Option + Right',
+    },
+    {
+        category: '瀏覽器',
+        description: '切換分頁（左）',
+        key: 'Cmd + Option + Left',
+    },
+    {
+        category: '瀏覽器',
+        description: '重新載入',
+        key: 'Cmd + R',
+    },
+    {
+        category: '瀏覽器',
+        description: '強制重新載入',
+        key: 'Cmd + Shift + R',
+    },
+    {
+        category: '瀏覽器',
+        description: '回上一頁',
+        key: 'Cmd + Left',
+    },
+    {
+        category: '瀏覽器',
+        description: '前往下一頁',
+        key: 'Cmd + Right',
+    },
+    {
+        category: '瀏覽器',
+        description: '網址列',
+        key: 'Cmd + L',
+    },
+    {
+        category: '瀏覽器',
+        description: '書籤欄',
+        key: 'Cmd + Shift + B',
+    },
+    {
+        category: '瀏覽器',
+        description: '無痕模式',
+        key: 'Cmd + Shift + N',
+    },
+    {
+        category: '瀏覽器',
+        description: '開發者工具',
+        key: 'Cmd + Option + I',
+    },
+
+    // 截圖
+    {
+        category: '截圖',
+        description: '全螢幕截圖',
+        key: 'Cmd + Shift + 3',
+    },
+    {
+        category: '截圖',
+        description: '區域截圖',
+        key: 'Cmd + Shift + 4',
+    },
+    {
+        category: '截圖',
+        description: '視窗截圖',
+        key: 'Cmd + Shift + 4 → Space',
+    },
+    {
+        category: '截圖',
+        description: '截圖工具選單',
+        key: 'Cmd + Shift + 5',
+    },
+    {
+        category: '截圖',
+        description: '全螢幕截圖到剪貼簿',
+        key: 'Cmd + Ctrl + Shift + 3',
+    },
+    {
+        category: '截圖',
+        description: '區域截圖到剪貼簿',
+        key: 'Cmd + Ctrl + Shift + 4',
+    },
+];
